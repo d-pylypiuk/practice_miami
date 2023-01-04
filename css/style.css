@@ -288,7 +288,10 @@ svg path {
   position: fixed;
   z-index: 100;
   width: 100%;
-  background: rgba(0, 119, 255, 0.8823529412);
+  padding: 0.625rem 0rem;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .header__container {
@@ -313,6 +316,11 @@ svg path {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+}
+
+._header-scroll {
+  background: rgba(0, 119, 255, 0.8823529412);
+  padding: 0.3125rem 0rem;
 }
 
 .menu .menu__block {
@@ -963,9 +971,9 @@ svg path {
   border-radius: 0.5rem;
   margin-bottom: 2rem;
   border: 2px solid transparent;
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  -o-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: border 0.3s ease-in-out 0s;
+  -o-transition: border 0.3s ease-in-out 0s;
+  transition: border 0.3s ease-in-out 0s;
 }
 
 .form-contacts textarea:hover {
@@ -986,8 +994,8 @@ svg path {
     font-size: 3rem;
   }
 
-  .header__container {
-    height: 5.625rem;
+  .header {
+    min-height: 5.625rem;
   }
 
   .header__logo img {
@@ -1161,8 +1169,8 @@ svg path {
     font-size: 2.25rem;
   }
 
-  .header__container {
-    height: 3.75rem;
+  .header {
+    min-height: 3.75rem;
   }
 
   .header__logo img {
@@ -1261,15 +1269,15 @@ svg path {
     }
 }
 
-@supports (height: clamp( 3.75rem , 2.8928571429rem  +  4.2857142857vw , 5.625rem )) {
-    .header__container {
-      height: clamp( 3.75rem , 2.8928571429rem  +  4.2857142857vw , 5.625rem );
+@supports (min-height: clamp( 3.75rem , 2.8928571429rem  +  4.2857142857vw , 5.625rem )) {
+    .header {
+      min-height: clamp( 3.75rem , 2.8928571429rem  +  4.2857142857vw , 5.625rem );
     }
 }
 
-@supports not (height: clamp( 3.75rem , 2.8928571429rem  +  4.2857142857vw , 5.625rem )) {
-    .header__container {
-      height: calc(3.75rem + 1.875 * (100vw - 20rem) / 43.75);
+@supports not (min-height: clamp( 3.75rem , 2.8928571429rem  +  4.2857142857vw , 5.625rem )) {
+    .header {
+      min-height: calc(3.75rem + 1.875 * (100vw - 20rem) / 43.75);
     }
 }
 
